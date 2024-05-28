@@ -1,0 +1,15 @@
+import random
+ramdom_number = random.randint(1,100)
+i = 0
+
+while i < 7:
+    Guess = int(input("Guess the number: "))
+    if Guess == ramdom_number:
+        print("Right answer")
+        break
+    elif Guess > ramdom_number:
+        print("Guess number is more")
+    else:
+        print("Guess number is less")
+
+    i += 1
