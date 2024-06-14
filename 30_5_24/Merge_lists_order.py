@@ -1,11 +1,19 @@
-list_1 = [1,2,7,4,5]
-list_2 = [6,7,1,3,9]
-order = []
-final_list = list_1 + list_2
-smallest = min(final_list)
-order.append(smallest)
-for num in final_list:
-    if (smallest < num):
-        smallest = num
-        order.append(smallest)
-print(order)
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_index = i
+        # Find the minimum element in the remaining unsorted array
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        # Swap the found minimum element with the first element
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+LIST_1 = [1, 2, 7, 4, 5]
+LIST_2 = [6, 7, 1, 3, 9]
+# Combine both lists into a single list
+final_list = LIST_1 + LIST_2
+# Sort the combined list using selection sort
+selection_sort(final_list)
+# Print the sorted list
+print(final_list)
